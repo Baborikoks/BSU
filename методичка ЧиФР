@@ -1,0 +1,132 @@
+\documentclass[a4paper, 12pt]{report}
+\usepackage[T2A]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[english,russian]{babel}
+\usepackage{amsmath,amsfonts,amssymb,amsthm,mathtools}
+\usepackage[left=2cm,right=2cm, top=2cm,bottom=2cm,bindingoffset=0cm]
+{geometry}
+\begin{document}
+\part*{Числовые и функциональные ряды }
+\chapter{Числовые ряды}
+\section{Признаки сходимости знакопостоянных рядов}
+\begin{center}
+Общие понятия
+\end{center}
+\textbf{Необходимое условие сходимости ряда.} \\
+Если ряд сходится, то последовательность его членов бесконечно мала,
+т. е $$\lim_{n \to \infty} a_n = 0$$
+\textbf{Признак сравнения.} \\
+Если \( 0 \leq a_n \leq b_n \), то из сходимости ряда \( \sum\limits_{n=0}^{\infty} b_n \) следует, что ряд \( \sum\limits_{n=0}^{\infty} a_n \) тоже сходится, а из расходимости второго следует расходимость первого. \\\\
+\textbf{Предельный признак сравнения.}\\
+Пусть \( \sum\limits_{n=1}^{\infty} a_n \) и \( \sum\limits_{n=1}^{\infty} b_n \) — строго положительные ряды. 
+
+1. Если \( \lim_{n \to \infty} \frac{a_n}{b_n} = l \), где \( 0 < l < \infty \), то ряды \( \sum\limits_{n=1}^{\infty} a_n \) и \( \sum\limits_{n=1}^{\infty} b_n \) сходятся или расходятся одновременно.
+
+2. Если \( \lim_{n \to \infty} \frac{a_n}{b_n} = 0 \), то из сходимости ряда \( \sum\limits_{n=1}^{\infty} b_n \) следует сходимость ряда \( \sum\limits_{n=1}^{\infty} a_n \), а из расходимости \( \sum\limits_{n=1}^{\infty} a_n \) — расходимость ряда \( \sum\limits_{n=1}^{\infty} b_n \).
+
+3. Если \( \lim_{n \to \infty} \frac{a_n}{b_n} = \infty \), то из расходимости ряда \( \sum\limits_{n=1}^{\infty} a_n \) следует расходимость ряда \( \sum\limits_{n=1}^{\infty} b_n \), а из сходимости \( \sum\limits_{n=1}^{\infty} a_n \) — сходимость ряда \( \sum\limits_{n=1}^{\infty} b_n \). \\\\
+\textbf{Признак Коши} (\( a_n \geq 0 \)):
+Если \( \sqrt[n]{a_n} \to q \) при \( n \to \infty \), то при \( q < 1 \) ряд \( \sum\limits_{n=1}^{\infty} a_n \) сходится, а при \( q > 1 \) — расходится.\\\\
+\textbf{Признак Даламбера} (\( a_n > 0 \)):\\
+Если \( \frac{a_{n+1}}{a_n} \to q \) при \( n \to \infty \), то при \( q < 1 \) ряд \( \sum\limits_{n=1}^{\infty} a_n \) сходится, а при \( q > 1 \) — расходится.\\\\
+\textbf{Признак Раабе} (\( a_n > 0 \)):
+Если 
+\[
+\lim_{n \to \infty} n \left( \frac{a_n}{a_{n+1}} - 1 \right) = q,
+\]
+то при \( q > 1 \) ряд \( \sum\limits_{n=1}^{\infty} a_n \) сходится, а при \( q < 1 \) — расходится.\\\\
+\textbf{Доказать непосредственно сходимость следующих рядов и найти их суммы:} \\\\
+\textbf{Пример 1:}$$ \quad 1 - \frac{1}{2} + \frac{1}{4} - \frac{1}{8} + ... + \frac{(-1)^{n-1}}{2^{n-1}} + ...$$ \\ 
+Найдем сумму ряда по формуле бесконечно убывающей прогрессии для $n$ членов.\\
+$$q= -\frac{1}{2}, S_n = \frac{1-(-\frac{1}{2})^{n}}{1+\frac{1}{2}} = \frac{2(1-(-\frac{1}{2})^{n})}{3}$$ \\
+Переходим к пределу при $n \to \infty$:
+$$\lim_{n \to \infty} \frac{2(1-(-\frac{1}{2})^{n})}{3} = \frac{2}{3}$$\\
+Так как предел равен $const$, то сумма ряда сходится. \\\\ 
+\textbf{Пример 2:} $$\left( \frac{1}{2} + \frac{1}{3} \right) + \left( \frac{1}{2^2} + \frac{1}{3^2} \right) + \cdots + \left( \frac{1}{2^n} + \frac{1}{3^n} \right) + ...$$ \\
+Разобьем на две скобки: $$(\frac{1}{2^{1}} + \frac{1}{2^{2}} + ... + \frac{1}{2^{n}} + ...) + (\frac{1}{3^{1}} + \frac{1}{3^{2}} + ... + \frac{1}{3^{n}} + ...)$$ \\ 
+Найдем сумму двух рядов по формуле бесконечно убывающей прегрессии для $n$ членов.\\
+$$q_1 = \frac{1}{2}, S_n = \frac{1}{2} \frac{1-(\frac{1}{2})^{n}}{1-\frac{1}{2}} = 1 - (\frac{1}{2})^{n}$$
+$$q_2 = \frac{1}{2}, S_n = \frac{1}{3} \frac{1-(\frac{1}{3})^{n}}{1-\frac{1}{3}} =\frac{1 - (\frac{1}{3})^{n}}{2}$$
+Переходим к пределу при $n \to \infty$:
+$$\lim_{n \to \infty} (1 - (\frac{1}{2})^{n}) = 1$$
+$$\lim_{n \to \infty} \frac{1-(\frac{1}{3})^{n}}{2} = \frac{1}{2}$$
+Ряд сходится, т. к. сходятся суммы двух рядов.\\\\
+\textbf{Исследовать сходимость рядов:} \\\\
+\textbf{Пример 1:} $$1 - 1 + 1 - 1 + 1 - 1 + ... $$ \\ 
+$a_n = (-1)^{n-1}$ \\
+Перейдем к пределу:
+$\lim_{n \to \infty} (-1)^{n-1}$ такой предел не существует.\\
+Можно также убедиться в этом, разбив на 2 подпоследовательности из $1$ и $-1$, они так же будут расходиться.
+Ряд расходится. \\\\
+\textbf{Пример 2:} $$\frac{1}{1!} + \frac{1}{2!} + \frac{1}{3!} + \cdots + \frac{1}{n!} + \cdots$$ \\
+Попробуем найти предел от $a_n = \frac{1}{n!}$ $$\lim_{n \to \infty} \frac{1}{n!} = 0$$ из этого мы не можем сделать никаких выводов.\\
+Используем признак сравнения $$\frac{1}{n!} = \frac{1}{1 2 3 ... (n-1)n} \leq \frac{1}{n(n-1)}$$ \\
+$\frac{1}{n(n-1)}$ - такая сумма сходится, значит и изначальная тоже сходится.\\\\
+\textbf{Используя признаки Коши и Даламбера, исследовать на сходимость: } \\\\
+\textbf{Пример 1:} $$\frac{1000}{11} + \frac{1000^2}{21} + \frac{1000^3}{31} + \cdots + \frac{1000^n}{n} + \cdots$$
+Попробуем решить с помощью признака Коши: $$\lim_{n \to \infty} \sqrt[n]{\frac{1000^{n}}{n!}} = \lim_{n \to \infty} \frac{1000}{\sqrt[n]{n!}} = 0 \textless 1$$ 
+Ряд сходится.\\\\
+\textbf{Пример 2:}
+$$\sum_{n=1}^{\infty} \frac{2 + (-1)^n}{2^n}$$
+Используем признак сравнения: $$ 0\leq \sum_{n=1}^{\infty} \frac{2 + (-1)^n}{2^n} \leq \frac{3}{2^{n}}$$
+Покажем, что $\frac{3}{2^{n}}$ cходится. $$\lim_{n \to \infty} \sqrt[n]{\frac{3}{2^{n}}} = \lim_{n \to \infty} \frac{3^\frac{1}{n}}{2} = \frac{1}{2} < 1$$ 
+Сходится по признаку Коши, значит по признаку сравнения изначальный ряд схлдится.\\\\
+\textbf{Пример 3:} $$\frac{(1!)^2}{2} + \frac{(2!)^2}{2^4} + \frac{(3!)^2}{2^9} + \cdots + \frac{(n!)^2}{2^{n^2}} + \cdots$$\\\\
+Используем признак Даламбера: $$\lim_{n \to \infty} \frac{\frac{((n + 1)!)^2}{2^{(n+1)^2}}}{\frac{(n!)^2}{2^{n^2}}} = \lim_{n \to \infty} \frac{((n + 1)!)^2 2^{n^2}}{2^{(n+1)^2} (n!)^2} = \lim_{n \to \infty} \frac{(n + 1)^2}{2^{2n+1}} = 0 < 1$$ 
+Ряд сходится.\\\\
+\textbf{Пример 4:} $$\sum_{n=1}^{\infty} \left( \sqrt{2} - \sqrt[3]{2} \right) \left( \sqrt{2} - \sqrt[5]{2} \right) \cdots \left( \sqrt{2} - \sqrt[2n-1]{2} \right) \cdots $$ 
+Используем признак Даламбера: $$\lim_{n \to \infty} \frac{\sqrt{2}- \sqrt[2n+1]{2}}{\sqrt{2} - \sqrt[2n-1]{2}} = \lim_{n \to  \infty} (\sqrt{2} - \sqrt[2n+3]{2}) = \sqrt{2} - 1 < 1$$
+Ряд сходится.\\\\
+\textbf{Используя признак Раабе, исcледовать на сходимость:} \\\\
+\textbf{Пример 1:} $$\sum_{n=1}^{\infty} \frac{\sqrt{n!}}{(2 + \sqrt{1})(2 + \sqrt{2}) \cdots (2 + \sqrt{n})}$$ 
+Используем признак Раабе: $$\frac{a_n}{a_{n+1}} = \frac{2 + \sqrt{n + 1}}{\sqrt{n + 1}}$$
+$$\lim_{n \to \infty} n\left(\frac{2 + \sqrt{n + 1}}{\sqrt{n + 1}} -1\right) = \lim_{n \to \infty} n\left(\frac{2}{\sqrt{n + 1}} + \frac{\sqrt{n + 1}}{\sqrt{n + 1}} - 1\right) = \lim_{n \to \infty} \frac{2n}{\sqrt{n + 1}} = +\infty$$ 
+Ряд сходится.\\\\
+\textbf{Пример 2:} $$\left( \frac{1}{2} \right)^p + \left( \frac{1 \cdot 3}{2 \cdot 4} \right)^p + \left( \frac{1 \cdot 3 \cdot 5}{2 \cdot 4 \cdot 6} \right)^p + \ldots$$ дописать решение\\\\ 
+\textbf{Исследовать на сходимость, используя разложение по Тейлору:}\\\\
+\textbf{Пример 1:} $$\sum_{n=1}^{\infty} \left( \sqrt{n + a} - \sqrt[4]{n^2 + n + b} \right)$$
+Разложи по Тейлору: $(1+x)^{\mu}= 1 + \mu x + \frac{\mu(\mu-1)}{2!}x^2 + o(x^2)$ \\
+Разложим $a_n$ по этой формуле: $$a_n = \sqrt{n+a}- \sqrt[4]{n^2 + n + b} = n^\frac{1}{2} \left( \left(1 + \frac{a}{n}\right)^\frac{1}{2} - \left(1 + \left(\frac{1}{n} + \frac{b}{n^2}\right)^\frac{1}{n}\right) \right) = $$ $$ 
+=n^\frac{1}{2} \left( \frac{1}{n} \left( \frac{a}{2} - \frac{1}{4} \right) + \frac{1}{n^2}\left( \frac{a^2}{8}-\frac{b}{4}+\frac{3}{32}\right) + o(\frac{1}{n^2})\right) = $$ $$= \frac{1}{n^{\frac{1}{2}}}\left( \frac{a}{2} - \frac{1}{4}\right) + \frac{1}{n^{\frac{3}{2}}}\left(\frac{a^2}{8} - \frac{b}{4} \right) + o\left(\frac{1}{n^{\frac{3}{2}}}\right)$$
+дописать решение 
+\section{Признаки сходимости знакопеременных рядов}
+\begin{center}
+Общие понятия
+\end{center}
+\textbf{Признак Лейбница:}\\ Если последовательность \( a_n \) является монотонной и бесконечно малой, то знакочередующийся ряд 
+
+\[
+\sum_{k=1}^{\infty} (-1)^{k-1} a_k
+\]
+
+сходится, и для его остатков имеют место оценки
+
+\[ \left| \sum_{k=n+1}^{\infty} (-1)^{k-1} a_k \right| \leq a_{n+1} \quad \forall n \in \mathbb{N}_0.
+\] \\\\
+\textbf{Признак Дирихле:} \\ Если:
+\begin{enumerate}
+    \item последовательность \( a_m \) является монотонной и бесконечно малой;
+    \item частные суммы \( B_n \) ряда 
+    \[
+    \sum_{n=1}^{\infty} b_n
+    \]
+    ограничены, т. е. \( |B_n| \leq M \) — const \( \forall n \in \mathbb{N} \),
+\end{enumerate}
+то ряд 
+$\sum_{n=1}^{\infty} a_n b_n$
+сходится.\\\\
+\textbf{Признак Абеля:} \\Если:
+\begin{enumerate}
+    \item последовательность \( a_n \) является монотонной и ограниченной;
+    \item ряд 
+    $\sum_{n=1}^{\infty} b_n$
+    сходится,
+\end{enumerate}
+то ряд 
+\[
+\sum_{n=1}^{\infty} a_n b_n
+\]
+также является сходящимся. \\\\
+\textbf{Доказать непосредственно сходимость следующих рядов и найти их суммы:}\\\\
+\textbf{Пример 1:} $$$$
+\end{document}
